@@ -1297,3 +1297,43 @@ footer hr{
 #scrollToTopBtn button:hover {
   background-color: rgb(252, 44, 44);
 }
+/* responsive start here */
+@media (max-width: 991px) {
+  header .navbar-toggler{
+       background-color: #fff;
+  }
+  header .navbar-nav .nav-item .nav-link{
+     display: inline-block;
+     margin-bottom: 15px;
+  }
+#speak {
+    margin-top: 740px;
+    display: inherit !important;
+}
+#prj .right{
+  margin-bottom: 40px;
+}
+.about #circle{
+   right: 0;
+   left: 24%;
+}
+.right .col-md-6{
+  width: 50% !important;
+}
+#work-area .col-md-4{
+  width: 50%;
+}
+.rulerline{
+  width:150%;
+}
+#footer .col-md-2{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.rulerline{
+  animation: moveLeftToRight 50s linear infinite;
+}
+
+}
