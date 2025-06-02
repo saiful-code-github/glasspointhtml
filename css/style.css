@@ -1297,8 +1297,33 @@ footer hr{
 #scrollToTopBtn button:hover {
   background-color: rgb(252, 44, 44);
 }
+.owl-pagination{
+  display:none;
+}
 /* responsive start here */
+@media (min-width:992px) {
+    .desktop-view{
+       display: block;
+    }
+    .mobile-view{
+      display: none;
+    }
+}
 @media (max-width: 991px) {
+  .desktop-view{
+     display: none;
+  }
+  .mobile-view{
+    display: block;
+  }
+  #slider-carousel2 img{
+    width: 100%; 
+    height: 400px;
+    object-fit: cover;
+  }
+  header .navbar{
+     background: #151515;
+  }
   header .navbar-toggler{
        background-color: #fff;
   }

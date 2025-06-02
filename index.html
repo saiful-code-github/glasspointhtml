@@ -1,229 +1,254 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->   
-    <!-- animate css -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap " rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- slider -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300|400'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css'>
-    <title>Glass Point</title>
-      <style>
-      .slider {
-        width: 100%;
-        height: 100%;
-        transition: 0.5s ease-in-out;
-      }
-      .down .slider {
-        transform: scale(0.9);
-      }
-      .down .slider .item .tit {
-        opacity: 0;
-      }
-      .slider * {
-        outline: none;
-      }
-      .slider .item {
-        position: relative;
-        z-index: 1;
-        width: 100vw;
-        height: 100vh;
-      }
-      .slider .item svg {
-        width: 100%;
-        height: 100vh;
-        z-index: 1;
-      }
-      .slider .item .tit {
-        text-align: center;
-        position: absolute;
-        z-index: 10;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        transform: translateY(-50%);
-        letter-spacing: 2rem;
-        color: #fff;
-        font-family: Roboto, sans-serif;
-        font-size: 5vw;
-        transition: all 0.3s ease-in-out;
-      }
-      
-      #slider-1 {
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: 0;
-      }
-      #slider-1 .tit {
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <!-- animate css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap " rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- slider -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300|400'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css'>
+  <title>Glass Point</title>
+  <style>
+    .slider {
+      width: 100%;
+      height: 100%;
+      transition: 0.5s ease-in-out;
+    }
+
+    .down .slider {
+      transform: scale(0.9);
+    }
+
+    .down .slider .item .tit {
+      opacity: 0;
+    }
+
+    .slider * {
+      outline: none;
+    }
+
+    .slider .item {
+      position: relative;
+      z-index: 1;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .slider .item svg {
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+    }
+
+    .slider .item .tit {
+      text-align: center;
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%);
+      letter-spacing: 2rem;
+      color: #fff;
+      font-family: Roboto, sans-serif;
+      font-size: 5vw;
+      transition: all 0.3s ease-in-out;
+    }
+
+    #slider-1 {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+    }
+
+    #slider-1 .tit {
+      display: none;
+    }
+
+    #slider-2 {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      transform: scale(1) !important;
+      pointer-events: none;
+    }
+
+    .cursor {
+      pointer-events: none;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      margin-top: -15px;
+      margin-left: -15px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+      transition: transform ease-in-out 0.2s, background ease-in-out 0.2s;
+      transform: translateZ(0);
+      z-index: 100;
+      left: -9999px;
+    }
+
+    .cursor:before,
+    .cursor:after {
+      content: "";
+      position: absolute;
+      border-left: 6px solid rgba(255, 255, 255, 0.5);
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      top: 10px;
+      left: 52px;
+      opacity: 0;
+      transition: left ease-in-out 0.1s, opacity ease-in-out 0.2s;
+    }
+
+    .cursor:after {
+      border-left: none;
+      border-right: 6px solid rgba(255, 255, 255, 0.5);
+      left: -27px;
+    }
+
+    .down .cursor {
+      transform: scale(0.7) translateZ(0);
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .down .cursor:before,
+    .down .cursor:after {
+      opacity: 1;
+      left: 49px;
+    }
+
+    .down .cursor:after {
+      left: -24px;
+    }
+
+    @media (pointer: coarse) {
+      .cursor {
         display: none;
       }
-      
-      #slider-2 {
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: 0;
-        transform: scale(1) !important;
-        pointer-events: none;
-      }
-      
-      .cursor {
-        pointer-events: none;
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        margin-top: -15px;
-        margin-left: -15px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
-        transition: transform ease-in-out 0.2s, background ease-in-out 0.2s;
-        transform: translateZ(0);
-        z-index: 100;
-        left: -9999px;
-      }
-      .cursor:before, .cursor:after {
-        content: "";
-        position: absolute;
-        border-left: 6px solid rgba(255, 255, 255, 0.5);
-        border-top: 6px solid transparent;
-        border-bottom: 6px solid transparent;
-        top: 10px;
-        left: 52px;
-        opacity: 0;
-        transition: left ease-in-out 0.1s, opacity ease-in-out 0.2s;
-      }
-      .cursor:after {
-        border-left: none;
-        border-right: 6px solid rgba(255, 255, 255, 0.5);
-        left: -27px;
-      }
-      .down .cursor {
-        transform: scale(0.7) translateZ(0);
-        background: rgba(255, 255, 255, 0.4);
-      }
-      .down .cursor:before, .down .cursor:after {
-        opacity: 1;
-        left: 49px;
-      }
-      .down .cursor:after {
-        left: -24px;
-      }
-      @media (pointer: coarse) {
-        .cursor {
-          display: none;
-        }
-      }
-      
-      .the-most {
-        position: fixed;
-        z-index: 10;
-        bottom: 0;
-        left: 0;
-        width: 50vw;
-        max-width: 100px;
-        padding: 10px;
-      }
-      .the-most img {
-        max-width: 100%;
-      }
-      #speak{
-        margin-top: 650px;
-      }
-      </style>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-    <a class="navbar-brand" href="#"><img src="img/logoglassw.png" width="230px" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item ">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#prj">About</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#why">Services</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#works">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#footer">Contact</a>
-        </li>
-      </ul>
-    </div>
-    </div>
-  </nav>
-    </header>
-<!-- slider -->
-<section class="banner">
-  <div class="slider" id="slider-1">
-    <div class="item">
-      <svg xmlns="http://www.w3.org/2000/svg" class="original">
-        <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="./img/Glass_Banner02.jpg" mask="url(#donutmask)"></image>
-      </svg>
-      <div class="tit text-uppercase animate__animated animate__fadeInLeftBig animate__slow">Reflecting Brilliance</div>
-    </div>
-    <div class="item">
-      <svg xmlns="http://www.w3.org/2000/svg" class="original">
-        <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="./img/Glass_Banner1.jpg"  mask="url(#donutmask)"></image>  
-      </svg>
-      <div class="tit text-uppercase animate__animated animate__fadeInRightBig animate__slow">architectural <br> glass</div>
-    </div>
-    <div class="item">
-      <svg xmlns="http://www.w3.org/2000/svg" class="original">
-        <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="./img/glass-banner3.jpg" mask="url(#donutmask)"></image>  
-      </svg>
-      <div class="tit text-uppercase animate__animated animate__fadeInUpBig animate__slow text-uppercase">Crystal Clear</div>
-    </div>
-    <div class="item text-upper">
-      <svg xmlns="http://www.w3.org/2000/svg" class="original">
-        <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="./img/Glass_Banner4.jpg" mask="url(#donutmask)"></image>  
-        
-      </svg>
-      <div class="tit animate__animated animate__fadeInDownBig animate__slow text-uppercase">Clear Vision</div>
-    </div>
-  </div>
-  
-  <svg>
-    <defs>
-      <mask id="donutmask">
-        <circle id="outer" cx="250" cy="250" r="400" fill="white"/>
-        <circle id="inner" cx="250" cy="250" r="300"/>
-      </mask>
-    </defs>
-  </svg>
-  
-  <div class="cursor"></div>
-  
-</section>
-    <section id="speak" style="display: none;">
+    }
+
+    .the-most {
+      position: fixed;
+      z-index: 10;
+      bottom: 0;
+      left: 0;
+      width: 50vw;
+      max-width: 100px;
+      padding: 10px;
+    }
+
+    .the-most img {
+      max-width: 100%;
+    }
+
+    #speak {
+      margin-top: 650px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light">
       <div class="container">
-        <!-- <div class="say text-center">
+        <a class="navbar-brand" href="#"><img src="img/logoglassw.png" width="230px" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#prj">About</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#why">Services</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#works">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- slider -->
+  <section class="banner">
+    <div class="slider" id="slider-1">
+      <div class="item">
+        <svg xmlns="http://www.w3.org/2000/svg" class="original">
+          <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="./img/Glass_Banner02.jpg"
+            mask="url(#donutmask)"></image>
+        </svg>
+        <div class="tit text-uppercase animate__animated animate__fadeInLeftBig animate__slow">Reflecting Brilliance
+        </div>
+      </div>
+      <div class="item">
+        <svg xmlns="http://www.w3.org/2000/svg" class="original">
+          <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="./img/Glass_Banner1.jpg"
+            mask="url(#donutmask)"></image>
+        </svg>
+        <div class="tit text-uppercase animate__animated animate__fadeInRightBig animate__slow">architectural <br> glass
+        </div>
+      </div>
+      <div class="item">
+        <svg xmlns="http://www.w3.org/2000/svg" class="original">
+          <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="./img/glass-banner3.jpg"
+            mask="url(#donutmask)"></image>
+        </svg>
+        <div class="tit text-uppercase animate__animated animate__fadeInUpBig animate__slow text-uppercase">Crystal
+          Clear</div>
+      </div>
+      <div class="item text-upper">
+        <svg xmlns="http://www.w3.org/2000/svg" class="original">
+          <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="./img/Glass_Banner4.jpg"
+            mask="url(#donutmask)"></image>
+
+        </svg>
+        <div class="tit animate__animated animate__fadeInDownBig animate__slow text-uppercase">Clear Vision</div>
+      </div>
+    </div>
+
+    <svg>
+      <defs>
+        <mask id="donutmask">
+          <circle id="outer" cx="250" cy="250" r="400" fill="white" />
+          <circle id="inner" cx="250" cy="250" r="300" />
+        </mask>
+      </defs>
+    </svg>
+
+    <div class="cursor"></div>
+
+  </section>
+  <section id="speak" style="display: none;">
+    <div class="container">
+      <!-- <div class="say text-center">
           <h2>WELCOME TO
 <span>GLASS POINT</span></h2>
 <hr>
@@ -231,694 +256,903 @@
 <p>Glass point is one of the distinguished manufacturer and suppliers of wide range of Bedroom, Bathroom, Ceiling Style, Fountains, Awings, Glass Film Energy efficiency means more than protecting the environment.</p>
 <h5><a href="about.html" style="text-decoration: none;color: #fff;">Explore More <i class="fa fa-long-arrow-right pl-2" style="font-weight: 200;"></i></a></h5>
         </div> -->
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="prj" style="margin-top: 500px;overflow: hidden;">
-      <div class="container pt-5">
-        <div class="row d-flex">
-          <div class="col-md-7">
-            <div class="say">
-              <h2>WELCOME TO
-                <span>GLASS POINT</span></h2>
-                <hr>
-                <h4>" Cutting overhead costs for your business, and that helps you protect your bottom line "</h4>
-                <p>Glass point is one of the distinguished manufacturer and suppliers of wide range of Bedroom, Bathroom, Ceiling Style, Fountains, Awings, Glass Film Energy efficiency means more than protecting the environment.</p>
-                <h5><a href="about.html" style="text-decoration: none;color: #fff;">Explore More <i class="fa fa-long-arrow-right pl-2" style="font-weight: 200;"></i></a></h5>
-            </div>
-            <div class="right">
-              <h4>EXOTIC RANGE COMMERCIAL GLASS WINDOWS & DOORS </h4>
-              <div class="row">
-                 <div class="col-md-6">
-                   <h2>1600 + <br> <span>  Projects Completed</span></h2> 
-                 </div>
-                 <div class="col-md-6">
-                   <h2>423 + <br> <span>  Active Clients</span></h2> 
-                 </div>
-               </div>
-              
-            </div>
+  <section id="prj" style="margin-top: 500px;overflow: hidden;">
+    <div class="container pt-5">
+      <div class="row d-flex">
+        <div class="col-md-7">
+          <div class="say">
+            <h2>WELCOME TO
+              <span>GLASS POINT</span>
+            </h2>
+            <hr>
+            <h4>" Cutting overhead costs for your business, and that helps you protect your bottom line "</h4>
+            <p>Glass point is one of the distinguished manufacturer and suppliers of wide range of Bedroom, Bathroom,
+              Ceiling Style, Fountains, Awings, Glass Film Energy efficiency means more than protecting the environment.
+            </p>
+            <h5><a href="about.html" style="text-decoration: none;color: #fff;">Explore More <i
+                  class="fa fa-long-arrow-right pl-2" style="font-weight: 200;"></i></a></h5>
           </div>
-          <div class="col-md-5 about">
-            <!--  <video width="100%" height="100%"  autoplay="autoplay" muted>
+          <div class="right">
+            <h4>EXOTIC RANGE COMMERCIAL GLASS WINDOWS & DOORS </h4>
+            <div class="row">
+              <div class="col-md-6">
+                <h2>1600 + <br> <span> Projects Completed</span></h2>
+              </div>
+              <div class="col-md-6">
+                <h2>423 + <br> <span> Active Clients</span></h2>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-5 about">
+          <!--  <video width="100%" height="100%"  autoplay="autoplay" muted>
    <source src="img/movie.mp4" type="video/mp4">
    
  </video> -->
-           <img src="img/sl1.jpg" width="100%">
-             <div id="circle">
-                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                 <defs>
-                                     <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
-                                 </defs>
-                                 <circle cx="150" cy="100" r="75" fill="none" />
-                                 <g>
-                                     <use xlink:href="#circlePath" fill="none" />
-                                     <text fill="#fff">
-                                         <textPath xlink:href="#circlePath"> . GLASS POINT . GLASS POINT . GLASS POINT </textPath>
-                                     </text>
-                                 </g>
-                             </svg>
-                         </div>
-           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="work-area">
-      <div class="container pt-5">
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <svg width="60px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.6 120" style="enable-background:new 0 0 106.6 120;" xml:space="preserve"> <g>   <path d="M1.2,120c-0.7-0.1-1.1-0.6-1.1-1.3c0.1-0.6,0.5-1,1.1-1.1h7.9v-36l-4.5,1.1c-0.6,0.1-1.3-0.3-1.4-0.9   L1,72.5c-0.1-0.6,0.3-1.3,0.9-1.4l31.9-7.4V12.8L29,11.7c-0.3-0.1-0.6-0.3-0.7-0.5c-0.2-0.3-0.2-0.6-0.1-0.9l2.2-9.3   c0.1-0.6,0.8-1,1.4-0.9c0,0,0,0,0,0l71.2,16.5c0.6,0.2,1,0.8,0.9,1.4l-2.2,9.3c-0.1,0.5-0.6,0.9-1.2,0.9c-0.1,0-0.2,0-0.3,0   l-2.7-0.6v21.3l4.5-1c0.6-0.1,1.3,0.3,1.4,0.9l2.2,9.3c0.1,0.6-0.3,1.3-0.9,1.4l-7.2,1.7v18.6c0.1,0.7-0.4,1.2-1.1,1.3   s-1.2-0.4-1.3-1.1c0-0.1,0-0.1,0-0.2v-18L11.5,81.1v36.5h48.3V84.4c0-0.6,0.4-1.1,1-1.2l22.9-4.5c0.4-0.1,0.7,0,1,0.3   c0.3,0.2,0.4,0.6,0.4,0.9v37.7h10.1v-16.4c0.1-0.7,0.6-1.1,1.3-1.1c0.6,0.1,1,0.5,1.1,1.1v16.4h7.8c0.7,0.1,1.1,0.6,1.1,1.3   c-0.1,0.6-0.5,1-1.1,1.1L1.2,120z M62.1,117.6h20.6V81.3l-20.6,4v12.8h3.1c0.7,0.1,1.1,0.6,1.1,1.3c-0.1,0.6-0.5,1-1.1,1.1h-3.1   L62.1,117.6z M3.6,73.1l1.6,7L103,57.4l-1.6-7L3.6,73.1z M36.1,63.1l34-7.9l-0.3-2.4H53.7c-0.7,0-1.2-0.5-1.2-1.2l0,0V32.5   c0-0.7,0.5-1.2,1.2-1.2l0,0h23.9c0.7,0,1.2,0.5,1.2,1.2v19.1c0,0,0,0,0,0.1l0,1.5l16.4-3.8V27l-59-13.7V63.1z M66.8,50.5h9.6V33.7   h-9.6V50.5z M54.9,50.5h9.6V33.7h-9.6L54.9,50.5z M30.7,9.6l68.9,16l1.6-7l-68.9-16L30.7,9.6z"></path>   <path d="M23,108.6c-0.7,0-1.2-0.5-1.2-1.2V88.3c0-0.7,0.5-1.2,1.2-1.2h23.9c0.7,0,1.2,0.5,1.2,1.2v19.1   c0,0.7-0.5,1.2-1.2,1.2L23,108.6z M36.1,106.2h9.6V89.5h-9.6V106.2z M24.2,106.2h9.6V89.5h-9.6L24.2,106.2z"></path>   <path d="M96.5,91.7c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2c0.7,0,1.2,0.5,1.2,1.2l0,0   C97.7,91.1,97.1,91.7,96.5,91.7"></path>  </g></svg>
-            <p>Houses</p>
-          </div>
-          <div class="col-md-4 text-center">
-            <svg width="50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 94.2 120" style="enable-background:new 0 0 94.2 120;" xml:space="preserve"><g transform="translate(89)">    <g>     <path d="M-87.8,120c-0.7,0-1.2-0.5-1.2-1.2V70.3c0.1-0.7,0.6-1.1,1.3-1.1c0.6,0.1,1,0.5,1.1,1.1v47.3h31.6V2.4    h-31.6v46.4c-0.1,0.7-0.6,1.1-1.3,1.1c-0.6-0.1-1-0.5-1.1-1.1V1.2c0-0.7,0.5-1.2,1.2-1.2c0,0,0,0,0,0H4c0.7,0,1.2,0.5,1.2,1.2    v117.6c0,0.7-0.5,1.2-1.2,1.2H-87.8z M-52.7,117.6H2.8v-7.2h-55.5L-52.7,117.6z M-8.4,88.9c0.7,0,1.2,0.5,1.2,1.2v17.9h10V81.8    h-55.5V108h10V90.1c0-0.7,0.5-1.2,1.2-1.2L-8.4,88.9z M-18.2,108h8.6V91.3h-8.6V108z M-29.2,108h8.6V91.3h-8.6L-29.2,108z     M-40.2,108h8.6V91.3h-8.6L-40.2,108z M-52.7,79.4H2.8v-7.2h-55.5V79.4z M-8.4,50.7c0.7,0,1.2,0.5,1.2,1.2v17.9h10V43.5h-55.5    v26.3h10V51.9c0-0.7,0.5-1.2,1.2-1.2l0,0L-8.4,50.7z M-18.2,69.8h8.6V53.1h-8.6V69.8z M-29.2,69.8h8.6V53.1h-8.6L-29.2,69.8z     M-40.2,69.8h8.6V53.1h-8.6L-40.2,69.8z M-52.7,41.1H2.8v-7.2h-55.5V41.1z M-8.4,12.4c0.7,0,1.2,0.5,1.2,1.2v17.9h10V2.4h-55.5    v29.2h10V13.6c0-0.7,0.5-1.2,1.2-1.2l0,0L-8.4,12.4z M-18.2,31.6h8.6V14.8h-8.6V31.6z M-29.2,31.6h8.6V14.8h-8.6L-29.2,31.6z     M-40.2,31.6h8.6V14.8h-8.6L-40.2,31.6z"></path>     <path d="M-77.3,106.6c-0.7,0-1.2-0.5-1.2-1.2V90.1c0-0.7,0.5-1.2,1.2-1.2h12.9c0.7,0,1.2,0.5,1.2,1.2v15.3    c0,0.7-0.5,1.2-1.2,1.2H-77.3z M-76.1,104.2h10.5V91.3h-10.5L-76.1,104.2z"></path>     <path d="M-77.3,68.4c-0.7,0-1.2-0.5-1.2-1.2V51.9c0-0.7,0.5-1.2,1.2-1.2h12.9c0.7,0,1.2,0.5,1.2,1.2v15.3    c0,0.7-0.5,1.2-1.2,1.2H-77.3z M-76.1,66h10.5V53.1h-10.5L-76.1,66z"></path>      <path d="M-77.3,30.1c-0.7,0-1.2-0.5-1.2-1.2l0,0V13.6c0-0.7,0.5-1.2,1.2-1.2l0,0h12.9c0.7,0,1.2,0.5,1.2,1.2l0,0    v15.3c0,0.7-0.5,1.2-1.2,1.2l0,0H-77.3z M-76.1,27.7h10.5V14.8h-10.5L-76.1,27.7z"></path>      <path d="M-87.8,60.7c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2c0.7,0,1.2,0.5,1.2,1.2l0,0    C-86.6,60.2-87.1,60.7-87.8,60.7"></path>   </g></g></svg>
-            <p>Appartments</p>
-              </div>
-          <div class="col-md-4 text-center">
-             <svg width="50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 88.8 120.1" style="enable-background:new 0 0 88.8 120.1;" xml:space="preserve"><g transform="translate(92)">   <g>     <path d="M-37.8,120.1c-0.7,0-1.2-0.5-1.2-1.2l-0.1-45.7h-16.9l0.1,45.7c0,0.3-0.1,0.6-0.3,0.8    c-0.2,0.2-0.5,0.4-0.8,0.4h-33.5c-0.7,0-1.2-0.5-1.2-1.2L-92,55.4c0-1.5,0.7-2.9,1.9-3.7l0.5-0.4v-9.8c0-1.6,0.8-3.1,2.2-3.9    l0.6-0.3v-7.2c0-2.4,1.9-4.4,4.3-4.6l1.1-0.1v-3.1c0-3.3,2.2-6.1,5.3-7l0.9-0.2l0.2-13.7c0-0.7,0.6-1.2,1.2-1.2    c0.3,0,0.6,0.1,0.8,0.4c0.2,0.2,0.3,0.5,0.3,0.8L-72.9,15l0.9,0.3c3.1,0.9,5.2,3.8,5.3,7v3.1l1.1,0.1c2.4,0.2,4.3,2.2,4.3,4.6    v7.2l0.6,0.3c1.4,0.8,2.2,2.3,2.2,3.9v9.8l0.5,0.4c1.2,0.9,1.9,2.3,1.9,3.7l0,4.9h16.9l0-4.9c0-1.5,0.7-2.9,1.9-3.7l0.5-0.4v-9.8    c0-1.6,0.8-3.1,2.2-3.9l0.6-0.3v-7.2c0-2.4,1.9-4.4,4.3-4.6l1.1-0.1v-3.1c0-3.3,2.2-6.1,5.3-7l0.9-0.2l0.2-13.7    c-0.1-0.7,0.4-1.2,1.1-1.3s1.2,0.4,1.3,1.1c0,0.1,0,0.1,0,0.2L-20.1,15l0.9,0.3c3.1,0.9,5.2,3.8,5.3,7v3.1l1.1,0.1    c2.4,0.2,4.3,2.2,4.3,4.6v7.2l0.6,0.3c1.4,0.8,2.2,2.3,2.2,3.9v9.8l0.5,0.4c1.2,0.9,1.9,2.3,1.9,3.7l0.1,19.3    c-0.1,0.7-0.6,1.2-1.3,1.1c-0.6,0-1-0.5-1.1-1.1l-0.1-19.3c0-1.2-1-2.2-2.2-2.2h-26.6c-1.2,0-2.2,1-2.2,2.2l0,4.9h22.6    c0.7-0.1,1.2,0.4,1.3,1.1c0.1,0.7-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.6l0,7.2h22.6c0.7-0.1,1.2,0.4,1.3,1.1    s-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.6l0,7.2h22.6c0.7,0.1,1.1,0.6,1.1,1.3c-0.1,0.6-0.5,1-1.1,1.1h-22.5l0,7.2h22.5    c0.7-0.1,1.2,0.4,1.3,1.1s-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.5l0,7.2h22.5c0.7-0.1,1.2,0.4,1.3,1.1s-0.4,1.2-1.1,1.3    c-0.1,0-0.1,0-0.2,0h-22.5l0,7.2h22.5c0.7,0.1,1.1,0.6,1.1,1.3c-0.1,0.6-0.5,1-1.1,1.1h-22.5l0,7.2h31.1l-0.1-21.5    c0.1-0.7,0.6-1.2,1.3-1.1c0.6,0,1,0.5,1.1,1.1l0.1,22.7c0,0.3-0.1,0.6-0.3,0.8c-0.2,0.2-0.5,0.4-0.8,0.4L-37.8,120.1z     M-89.4,117.7h31.1l-0.2-62.3c0-1.2-1-2.2-2.2-2.2h-26.6c-1.2,0-2.2,1-2.2,2.2l0,4.9H-67c0.7-0.1,1.2,0.4,1.3,1.1    c0.1,0.7-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.6l0,7.2H-67c0.7-0.1,1.2,0.4,1.3,1.1c0.1,0.7-0.4,1.2-1.1,1.3    c-0.1,0-0.1,0-0.2,0h-22.6l0,7.2H-67c0.7-0.1,1.2,0.4,1.3,1.1c0.1,0.7-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.5l0,7.2H-67    c0.7-0.1,1.2,0.4,1.3,1.1c0.1,0.7-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.5l0,7.2H-67c0.7-0.1,1.2,0.4,1.3,1.1    c0.1,0.7-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.5l0,7.2H-67c0.7-0.1,1.2,0.4,1.3,1.1c0.1,0.7-0.4,1.2-1.1,1.3    c-0.1,0-0.1,0-0.2,0h-22.5L-89.4,117.7z M-55.9,70.9h16.7v-8.1h-16.7L-55.9,70.9z M-32.2,39.3c-1.2,0-2.2,1-2.2,2.2v9.2h26.3    v-9.2c0-1.2-1-2.2-2.2-2.2H-32.2z M-85,39.3c-1.2,0-2.2,1-2.2,2.2v9.2h26.3v-9.2c0-1.2-1-2.2-2.2-2.2H-85z M-29.4,27.8    c-1.2,0-2.2,1-2.2,2.2v6.9h20.7v-6.9c0-1.2-1-2.2-2.2-2.2H-29.4z M-82.2,27.8c-1.2,0-2.2,1-2.2,2.2v6.9h20.7v-6.9    c0-1.2-1-2.2-2.2-2.2H-82.2z M-21.3,17.3c-2.7,0-4.9,2.2-4.9,4.9v3.2h9.9v-3.2C-16.3,19.5-18.6,17.3-21.3,17.3 M-74.1,17.3    c-2.7,0-4.9,2.2-4.9,4.9v3.2h9.9v-3.2C-69.1,19.5-71.3,17.3-74.1,17.3"></path>      <path d="M-4.5,86.7c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2c0.7,0,1.2,0.5,1.2,1.2l0,0    C-3.3,86.1-3.8,86.7-4.5,86.7"></path>   </g></g></svg>
-             <p>Commercial</p>
+          <img src="img/sl1.jpg" width="100%">
+          <div id="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+              y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300"
+              xml:space="preserve">
+              <defs>
+                <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+              </defs>
+              <circle cx="150" cy="100" r="75" fill="none" />
+              <g>
+                <use xlink:href="#circlePath" fill="none" />
+                <text fill="#fff">
+                  <textPath xlink:href="#circlePath"> . GLASS POINT . GLASS POINT . GLASS POINT </textPath>
+                </text>
+              </g>
+            </svg>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="products">
-      <div class="heading text-center pt-5 pb-2">
-        <h4>OUR RANGE OF PRODUCTS</h4>
-        <h2>OUR PRODUCTS</h2>
-      </div>
-       <div id="slider-carousel" class="owl-carousel">
-    <div class="item">
-      
-        
-        <img src="img/p1.jpg" width="100%">
-   
-      <h4>ARCHITECTURAL GLASS</h4>
-     
     </div>
+  </section>
 
-    <div class="item">
-     
-        <img src="img/p2.jpg" width="100%">
-     
-      <h4>BACK PAINTED GLASS</h4>
-    
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p3.jpg" width="100%">
-      
-      <h4>CEILING GLASS</h4>
-    
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p4.jpg" width="100%">
-      
-      <h4>COLOURED WORK ON GLASS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p5.jpg" width="100%">
-     
-      <h4>DESIGNER TABLE TOP</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p6.jpg" width="100%">
-    
-      <h4>DGU (DOUBLE GLAZED UNIT) GLASS</h4>
-     
-    </div>
-     <div class="item">
-      
-        <img src="img/p7.jpg" width="100%">
-    
-      <h4>DIGIARTS PRINTING ON GLASS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p8.jpg" width="100%">
-    
-      <h4>ETCHED GLASS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p9.jpg" width="100%">
-    
-      <h4>GLASS CANOPY</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p10.jpg" width="100%">
-    
-      <h4>GLASS DOORS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p11.jpg" width="100%">
-    
-      <h4>GLASS NAME PLATE</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p12.jpg" width="100%">
-    
-      <h4>GLASS PILLARS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p13.jpg" width="100%">
-    
-      <h4>GLASS SHOWER DOOR</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p14.jpg" width="100%">
-    
-      <h4>GLASS SHOWER ENCLOSURES</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p15.jpg" width="100%">
-    
-      <h4>GLASS SHOWER PANELS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p16.jpg" width="100%">
-    
-      <h4>GLASS TABLE TOPS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p17.jpg" width="100%">
-    
-      <h4>MANDIR GLASS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p18.jpg" width="100%">
-    
-      <h4>MIRRORED WALL</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p19.jpg" width="100%">
-    
-      <h4>MODERN WALL MIRRORS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p20.jpg" width="100%">
-    
-      <h4>RAILING GLASS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p21.jpg" width="100%">
-    
-      <h4>SAINT-GOBAIN LACQUERED GLASS</h4>
-     
-    </div>  
-    <div class="item">
-      
-        <img src="img/p22.jpg" width="100%">
-    
-      <h4>SHOWER CUBICLE</h4>
-     
-    </div> 
-
-    <div class="item">
-      
-        <img src="img/p23.jpg" width="100%">
-    
-      <h4>SPIDER GLAZING</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p24.jpg" width="100%">
-    
-      <h4>STAINED GLASS</h4>
-     
-    </div>
-    <div class="item">
-      
-        <img src="img/p25.jpg" width="100%">
-    
-      <h4>TOUGHENED GLASS WORK</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p26.jpg" width="100%">
-    
-      <h4>VENETIAN MIRRORS</h4>
-     
-    </div>
-
-    <div class="item">
-      
-        <img src="img/p27.jpg" width="100%">
-    
-      <h4>WINDOW GLASS</h4>
-     
-    </div>
-
-  </div>
-    </section>
-
-
-    <section id="why">
-      <div class="heading text-center pt-5 pb-2">
-        <h4>OUR FORTE</h4>
-        <h2>WHY <span>GLASS POINT</span></h2>
-      </div>
-      <div class="container pt-3">
+  <section id="work-area">
+    <div class="container pt-5">
       <div class="row">
         <div class="col-md-4 text-center">
-         <div class="card " >
-  <img  src="img/gr.png"  width="80px" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Craftsmanship and Quality</h5>
-    <p class="card-text">Glass Point takes pride in its skilled team of artisans and state-of-the-art manufacturing processes, ensuring that each custom glass product is crafted with utmost precision and attention to detail. By maintaining strict quality control measures, the company guarantees that customers receive top-notch, durable, and visually appealing glass solutions that not only meet but often exceed their expectations.</p>
-   
-  </div>
-</div> 
+          <svg width="60px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+            y="0px" viewBox="0 0 106.6 120" style="enable-background:new 0 0 106.6 120;" xml:space="preserve">
+            <g>
+              <path
+                d="M1.2,120c-0.7-0.1-1.1-0.6-1.1-1.3c0.1-0.6,0.5-1,1.1-1.1h7.9v-36l-4.5,1.1c-0.6,0.1-1.3-0.3-1.4-0.9   L1,72.5c-0.1-0.6,0.3-1.3,0.9-1.4l31.9-7.4V12.8L29,11.7c-0.3-0.1-0.6-0.3-0.7-0.5c-0.2-0.3-0.2-0.6-0.1-0.9l2.2-9.3   c0.1-0.6,0.8-1,1.4-0.9c0,0,0,0,0,0l71.2,16.5c0.6,0.2,1,0.8,0.9,1.4l-2.2,9.3c-0.1,0.5-0.6,0.9-1.2,0.9c-0.1,0-0.2,0-0.3,0   l-2.7-0.6v21.3l4.5-1c0.6-0.1,1.3,0.3,1.4,0.9l2.2,9.3c0.1,0.6-0.3,1.3-0.9,1.4l-7.2,1.7v18.6c0.1,0.7-0.4,1.2-1.1,1.3   s-1.2-0.4-1.3-1.1c0-0.1,0-0.1,0-0.2v-18L11.5,81.1v36.5h48.3V84.4c0-0.6,0.4-1.1,1-1.2l22.9-4.5c0.4-0.1,0.7,0,1,0.3   c0.3,0.2,0.4,0.6,0.4,0.9v37.7h10.1v-16.4c0.1-0.7,0.6-1.1,1.3-1.1c0.6,0.1,1,0.5,1.1,1.1v16.4h7.8c0.7,0.1,1.1,0.6,1.1,1.3   c-0.1,0.6-0.5,1-1.1,1.1L1.2,120z M62.1,117.6h20.6V81.3l-20.6,4v12.8h3.1c0.7,0.1,1.1,0.6,1.1,1.3c-0.1,0.6-0.5,1-1.1,1.1h-3.1   L62.1,117.6z M3.6,73.1l1.6,7L103,57.4l-1.6-7L3.6,73.1z M36.1,63.1l34-7.9l-0.3-2.4H53.7c-0.7,0-1.2-0.5-1.2-1.2l0,0V32.5   c0-0.7,0.5-1.2,1.2-1.2l0,0h23.9c0.7,0,1.2,0.5,1.2,1.2v19.1c0,0,0,0,0,0.1l0,1.5l16.4-3.8V27l-59-13.7V63.1z M66.8,50.5h9.6V33.7   h-9.6V50.5z M54.9,50.5h9.6V33.7h-9.6L54.9,50.5z M30.7,9.6l68.9,16l1.6-7l-68.9-16L30.7,9.6z">
+              </path>
+              <path
+                d="M23,108.6c-0.7,0-1.2-0.5-1.2-1.2V88.3c0-0.7,0.5-1.2,1.2-1.2h23.9c0.7,0,1.2,0.5,1.2,1.2v19.1   c0,0.7-0.5,1.2-1.2,1.2L23,108.6z M36.1,106.2h9.6V89.5h-9.6V106.2z M24.2,106.2h9.6V89.5h-9.6L24.2,106.2z">
+              </path>
+              <path
+                d="M96.5,91.7c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2c0.7,0,1.2,0.5,1.2,1.2l0,0   C97.7,91.1,97.1,91.7,96.5,91.7">
+              </path>
+            </g>
+          </svg>
+          <p>Houses</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <svg width="50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+            y="0px" viewBox="0 0 94.2 120" style="enable-background:new 0 0 94.2 120;" xml:space="preserve">
+            <g transform="translate(89)">
+              <g>
+                <path
+                  d="M-87.8,120c-0.7,0-1.2-0.5-1.2-1.2V70.3c0.1-0.7,0.6-1.1,1.3-1.1c0.6,0.1,1,0.5,1.1,1.1v47.3h31.6V2.4    h-31.6v46.4c-0.1,0.7-0.6,1.1-1.3,1.1c-0.6-0.1-1-0.5-1.1-1.1V1.2c0-0.7,0.5-1.2,1.2-1.2c0,0,0,0,0,0H4c0.7,0,1.2,0.5,1.2,1.2    v117.6c0,0.7-0.5,1.2-1.2,1.2H-87.8z M-52.7,117.6H2.8v-7.2h-55.5L-52.7,117.6z M-8.4,88.9c0.7,0,1.2,0.5,1.2,1.2v17.9h10V81.8    h-55.5V108h10V90.1c0-0.7,0.5-1.2,1.2-1.2L-8.4,88.9z M-18.2,108h8.6V91.3h-8.6V108z M-29.2,108h8.6V91.3h-8.6L-29.2,108z     M-40.2,108h8.6V91.3h-8.6L-40.2,108z M-52.7,79.4H2.8v-7.2h-55.5V79.4z M-8.4,50.7c0.7,0,1.2,0.5,1.2,1.2v17.9h10V43.5h-55.5    v26.3h10V51.9c0-0.7,0.5-1.2,1.2-1.2l0,0L-8.4,50.7z M-18.2,69.8h8.6V53.1h-8.6V69.8z M-29.2,69.8h8.6V53.1h-8.6L-29.2,69.8z     M-40.2,69.8h8.6V53.1h-8.6L-40.2,69.8z M-52.7,41.1H2.8v-7.2h-55.5V41.1z M-8.4,12.4c0.7,0,1.2,0.5,1.2,1.2v17.9h10V2.4h-55.5    v29.2h10V13.6c0-0.7,0.5-1.2,1.2-1.2l0,0L-8.4,12.4z M-18.2,31.6h8.6V14.8h-8.6V31.6z M-29.2,31.6h8.6V14.8h-8.6L-29.2,31.6z     M-40.2,31.6h8.6V14.8h-8.6L-40.2,31.6z">
+                </path>
+                <path
+                  d="M-77.3,106.6c-0.7,0-1.2-0.5-1.2-1.2V90.1c0-0.7,0.5-1.2,1.2-1.2h12.9c0.7,0,1.2,0.5,1.2,1.2v15.3    c0,0.7-0.5,1.2-1.2,1.2H-77.3z M-76.1,104.2h10.5V91.3h-10.5L-76.1,104.2z">
+                </path>
+                <path
+                  d="M-77.3,68.4c-0.7,0-1.2-0.5-1.2-1.2V51.9c0-0.7,0.5-1.2,1.2-1.2h12.9c0.7,0,1.2,0.5,1.2,1.2v15.3    c0,0.7-0.5,1.2-1.2,1.2H-77.3z M-76.1,66h10.5V53.1h-10.5L-76.1,66z">
+                </path>
+                <path
+                  d="M-77.3,30.1c-0.7,0-1.2-0.5-1.2-1.2l0,0V13.6c0-0.7,0.5-1.2,1.2-1.2l0,0h12.9c0.7,0,1.2,0.5,1.2,1.2l0,0    v15.3c0,0.7-0.5,1.2-1.2,1.2l0,0H-77.3z M-76.1,27.7h10.5V14.8h-10.5L-76.1,27.7z">
+                </path>
+                <path
+                  d="M-87.8,60.7c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2c0.7,0,1.2,0.5,1.2,1.2l0,0    C-86.6,60.2-87.1,60.7-87.8,60.7">
+                </path>
+              </g>
+            </g>
+          </svg>
+          <p>Appartments</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <svg width="50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+            y="0px" viewBox="0 0 88.8 120.1" style="enable-background:new 0 0 88.8 120.1;" xml:space="preserve">
+            <g transform="translate(92)">
+              <g>
+                <path
+                  d="M-37.8,120.1c-0.7,0-1.2-0.5-1.2-1.2l-0.1-45.7h-16.9l0.1,45.7c0,0.3-0.1,0.6-0.3,0.8    c-0.2,0.2-0.5,0.4-0.8,0.4h-33.5c-0.7,0-1.2-0.5-1.2-1.2L-92,55.4c0-1.5,0.7-2.9,1.9-3.7l0.5-0.4v-9.8c0-1.6,0.8-3.1,2.2-3.9    l0.6-0.3v-7.2c0-2.4,1.9-4.4,4.3-4.6l1.1-0.1v-3.1c0-3.3,2.2-6.1,5.3-7l0.9-0.2l0.2-13.7c0-0.7,0.6-1.2,1.2-1.2    c0.3,0,0.6,0.1,0.8,0.4c0.2,0.2,0.3,0.5,0.3,0.8L-72.9,15l0.9,0.3c3.1,0.9,5.2,3.8,5.3,7v3.1l1.1,0.1c2.4,0.2,4.3,2.2,4.3,4.6    v7.2l0.6,0.3c1.4,0.8,2.2,2.3,2.2,3.9v9.8l0.5,0.4c1.2,0.9,1.9,2.3,1.9,3.7l0,4.9h16.9l0-4.9c0-1.5,0.7-2.9,1.9-3.7l0.5-0.4v-9.8    c0-1.6,0.8-3.1,2.2-3.9l0.6-0.3v-7.2c0-2.4,1.9-4.4,4.3-4.6l1.1-0.1v-3.1c0-3.3,2.2-6.1,5.3-7l0.9-0.2l0.2-13.7    c-0.1-0.7,0.4-1.2,1.1-1.3s1.2,0.4,1.3,1.1c0,0.1,0,0.1,0,0.2L-20.1,15l0.9,0.3c3.1,0.9,5.2,3.8,5.3,7v3.1l1.1,0.1    c2.4,0.2,4.3,2.2,4.3,4.6v7.2l0.6,0.3c1.4,0.8,2.2,2.3,2.2,3.9v9.8l0.5,0.4c1.2,0.9,1.9,2.3,1.9,3.7l0.1,19.3    c-0.1,0.7-0.6,1.2-1.3,1.1c-0.6,0-1-0.5-1.1-1.1l-0.1-19.3c0-1.2-1-2.2-2.2-2.2h-26.6c-1.2,0-2.2,1-2.2,2.2l0,4.9h22.6    c0.7-0.1,1.2,0.4,1.3,1.1c0.1,0.7-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.6l0,7.2h22.6c0.7-0.1,1.2,0.4,1.3,1.1    s-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.6l0,7.2h22.6c0.7,0.1,1.1,0.6,1.1,1.3c-0.1,0.6-0.5,1-1.1,1.1h-22.5l0,7.2h22.5    c0.7-0.1,1.2,0.4,1.3,1.1s-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.5l0,7.2h22.5c0.7-0.1,1.2,0.4,1.3,1.1s-0.4,1.2-1.1,1.3    c-0.1,0-0.1,0-0.2,0h-22.5l0,7.2h22.5c0.7,0.1,1.1,0.6,1.1,1.3c-0.1,0.6-0.5,1-1.1,1.1h-22.5l0,7.2h31.1l-0.1-21.5    c0.1-0.7,0.6-1.2,1.3-1.1c0.6,0,1,0.5,1.1,1.1l0.1,22.7c0,0.3-0.1,0.6-0.3,0.8c-0.2,0.2-0.5,0.4-0.8,0.4L-37.8,120.1z     M-89.4,117.7h31.1l-0.2-62.3c0-1.2-1-2.2-2.2-2.2h-26.6c-1.2,0-2.2,1-2.2,2.2l0,4.9H-67c0.7-0.1,1.2,0.4,1.3,1.1    c0.1,0.7-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.6l0,7.2H-67c0.7-0.1,1.2,0.4,1.3,1.1c0.1,0.7-0.4,1.2-1.1,1.3    c-0.1,0-0.1,0-0.2,0h-22.6l0,7.2H-67c0.7-0.1,1.2,0.4,1.3,1.1c0.1,0.7-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.5l0,7.2H-67    c0.7-0.1,1.2,0.4,1.3,1.1c0.1,0.7-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.5l0,7.2H-67c0.7-0.1,1.2,0.4,1.3,1.1    c0.1,0.7-0.4,1.2-1.1,1.3c-0.1,0-0.1,0-0.2,0h-22.5l0,7.2H-67c0.7-0.1,1.2,0.4,1.3,1.1c0.1,0.7-0.4,1.2-1.1,1.3    c-0.1,0-0.1,0-0.2,0h-22.5L-89.4,117.7z M-55.9,70.9h16.7v-8.1h-16.7L-55.9,70.9z M-32.2,39.3c-1.2,0-2.2,1-2.2,2.2v9.2h26.3    v-9.2c0-1.2-1-2.2-2.2-2.2H-32.2z M-85,39.3c-1.2,0-2.2,1-2.2,2.2v9.2h26.3v-9.2c0-1.2-1-2.2-2.2-2.2H-85z M-29.4,27.8    c-1.2,0-2.2,1-2.2,2.2v6.9h20.7v-6.9c0-1.2-1-2.2-2.2-2.2H-29.4z M-82.2,27.8c-1.2,0-2.2,1-2.2,2.2v6.9h20.7v-6.9    c0-1.2-1-2.2-2.2-2.2H-82.2z M-21.3,17.3c-2.7,0-4.9,2.2-4.9,4.9v3.2h9.9v-3.2C-16.3,19.5-18.6,17.3-21.3,17.3 M-74.1,17.3    c-2.7,0-4.9,2.2-4.9,4.9v3.2h9.9v-3.2C-69.1,19.5-71.3,17.3-74.1,17.3">
+                </path>
+                <path
+                  d="M-4.5,86.7c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2c0.7,0,1.2,0.5,1.2,1.2l0,0    C-3.3,86.1-3.8,86.7-4.5,86.7">
+                </path>
+              </g>
+            </g>
+          </svg>
+          <p>Commercial</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="heading text-center pt-5 pb-2">
+      <h4>OUR RANGE OF PRODUCTS</h4>
+      <h2>OUR PRODUCTS</h2>
+    </div>
+    <div id="slider-carousel" class="owl-carousel">
+      <div class="item">
+
+
+        <img src="img/p1.jpg" width="100%">
+
+        <h4>ARCHITECTURAL GLASS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p2.jpg" width="100%">
+
+        <h4>BACK PAINTED GLASS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p3.jpg" width="100%">
+
+        <h4>CEILING GLASS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p4.jpg" width="100%">
+
+        <h4>COLOURED WORK ON GLASS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p5.jpg" width="100%">
+
+        <h4>DESIGNER TABLE TOP</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p6.jpg" width="100%">
+
+        <h4>DGU (DOUBLE GLAZED UNIT) GLASS</h4>
+
+      </div>
+      <div class="item">
+
+        <img src="img/p7.jpg" width="100%">
+
+        <h4>DIGIARTS PRINTING ON GLASS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p8.jpg" width="100%">
+
+        <h4>ETCHED GLASS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p9.jpg" width="100%">
+
+        <h4>GLASS CANOPY</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p10.jpg" width="100%">
+
+        <h4>GLASS DOORS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p11.jpg" width="100%">
+
+        <h4>GLASS NAME PLATE</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p12.jpg" width="100%">
+
+        <h4>GLASS PILLARS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p13.jpg" width="100%">
+
+        <h4>GLASS SHOWER DOOR</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p14.jpg" width="100%">
+
+        <h4>GLASS SHOWER ENCLOSURES</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p15.jpg" width="100%">
+
+        <h4>GLASS SHOWER PANELS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p16.jpg" width="100%">
+
+        <h4>GLASS TABLE TOPS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p17.jpg" width="100%">
+
+        <h4>MANDIR GLASS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p18.jpg" width="100%">
+
+        <h4>MIRRORED WALL</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p19.jpg" width="100%">
+
+        <h4>MODERN WALL MIRRORS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p20.jpg" width="100%">
+
+        <h4>RAILING GLASS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p21.jpg" width="100%">
+
+        <h4>SAINT-GOBAIN LACQUERED GLASS</h4>
+
+      </div>
+      <div class="item">
+
+        <img src="img/p22.jpg" width="100%">
+
+        <h4>SHOWER CUBICLE</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p23.jpg" width="100%">
+
+        <h4>SPIDER GLAZING</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p24.jpg" width="100%">
+
+        <h4>STAINED GLASS</h4>
+
+      </div>
+      <div class="item">
+
+        <img src="img/p25.jpg" width="100%">
+
+        <h4>TOUGHENED GLASS WORK</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p26.jpg" width="100%">
+
+        <h4>VENETIAN MIRRORS</h4>
+
+      </div>
+
+      <div class="item">
+
+        <img src="img/p27.jpg" width="100%">
+
+        <h4>WINDOW GLASS</h4>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="why">
+    <div class="heading text-center pt-5 pb-2">
+      <h4>OUR FORTE</h4>
+      <h2>WHY <span>GLASS POINT</span></h2>
+    </div>
+    <div class="container pt-3">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <div class="card ">
+            <img src="img/gr.png" width="80px" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Craftsmanship and Quality</h5>
+              <p class="card-text">Glass Point takes pride in its skilled team of artisans and state-of-the-art
+                manufacturing processes, ensuring that each custom glass product is crafted with utmost precision and
+                attention to detail. By maintaining strict quality control measures, the company guarantees that
+                customers receive top-notch, durable, and visually appealing glass solutions that not only meet but
+                often exceed their expectations.</p>
+
+            </div>
+          </div>
         </div>
         <div class="col-md-4">
-          <div class="card text-center" >
-  <img  src="img/gr1.png"  width="78px" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Diverse Customization</h5>
-    <p class="card-text">Glass Point offers a wide range of customization options, allowing customers to tailor their glass products to their exact specifications. Whether it's for architectural projects, interior design, or commercial installations, the company empowers clients to choose the size, shape, thickness, color, and other essential features of their glass products, ensuring they get a perfect fit for their specific needs.</p>
-   
-  </div>
-</div>
+          <div class="card text-center">
+            <img src="img/gr1.png" width="78px" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Diverse Customization</h5>
+              <p class="card-text">Glass Point offers a wide range of customization options, allowing customers to
+                tailor their glass products to their exact specifications. Whether it's for architectural projects,
+                interior design, or commercial installations, the company empowers clients to choose the size, shape,
+                thickness, color, and other essential features of their glass products, ensuring they get a perfect fit
+                for their specific needs.</p>
+
+            </div>
+          </div>
         </div>
         <div class="col-md-4">
-          <div class="card text-center" >
-   <img  src="img/gr2.png"  width="80px" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Client-Centric Approach</h5>
-    <p class="card-text">The company emphasizes a collaborative approach, working closely with clients throughout the design and production process. This proactive engagement allows for seamless communication, timely adjustments, and the incorporation of customer feedback, resulting in custom glass products that are tailored to their exact vision and preferences, enhancing the overall client experience.</p>
-   
-  </div>
-</div>
-        </div>
-      </div>
-      </div>
-    </section>
+          <div class="card text-center">
+            <img src="img/gr2.png" width="80px" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Client-Centric Approach</h5>
+              <p class="card-text">The company emphasizes a collaborative approach, working closely with clients
+                throughout the design and production process. This proactive engagement allows for seamless
+                communication, timely adjustments, and the incorporation of customer feedback, resulting in custom glass
+                products that are tailored to their exact vision and preferences, enhancing the overall client
+                experience.</p>
 
-    <section id="counter">
-      <div class="container-fluid pt-4">
-        <div class="row d-flex" >
-          <div class="col-md-9" style="padding: 0px; margin: 0px;">
-            <video width="100%" height="100%"  autoplay="autoplay" muted="" loop="">
-  <source src="img/vid.mp4" type="video/mp4">
- 
-</video>
-          </div>
-          <div class="col-md-3">
-            <div class="counter-container pt-5">
-   
-      <div class="counter" data-target="12" ></div>
-      <span>YEARS</span>
-    </div>
-    <div class="counter-container">
-      
-      <div class="counter" data-target="5000"></div>
-      <span>PROJECTS</span>
-    </div>
-    <div class="counter-container">
-    
-      <div class="counter" data-target="7500"></div>
-      <span>CLIENTS</span>
-    </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="get-in-touch">
-       <div class="heading text-center pt-5 pb-2">
-        <h4>GET IN TOUCH</h4>
-        <h2>BOOK APPOINTMENT WITH <span>GLASS POINT</span></h2>
-      </div>
-      <div class="container pb-5">
-        <form>
-          <div class="row">
-            <div class="col-md-4">
-              <input type="text" name="Name" placeholder="Your Name">
-            </div>
-            <div class="col-md-4">
-              <input type="email" name="Email " placeholder="Your Email">
-            </div>
-            <div class="col-md-4">
-               <input type="text" name="Address " placeholder="Your Address">
-            </div>
-          </div>        
-         </form>
-      </div>
-      <img src="img/ruler.png" width="100%" class="rulerline">
-      
-    </section>
+  <section id="counter">
+    <div class="container-fluid pt-4">
+      <div class="row d-flex">
+        <div class="col-md-9" style="padding: 0px; margin: 0px;">
+          <video width="100%" height="100%" autoplay="autoplay" muted="" loop="">
+            <source src="img/vid.mp4" type="video/mp4">
 
-    <section id="works">
+          </video>
+        </div>
+        <div class="col-md-3">
+          <div class="counter-container pt-5">
+
+            <div class="counter" data-target="12"></div>
+            <span>YEARS</span>
+          </div>
+          <div class="counter-container">
+
+            <div class="counter" data-target="5000"></div>
+            <span>PROJECTS</span>
+          </div>
+          <div class="counter-container">
+
+            <div class="counter" data-target="7500"></div>
+            <span>CLIENTS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-in-touch">
+    <div class="heading text-center pt-5 pb-2">
+      <h4>GET IN TOUCH</h4>
+      <h2>BOOK APPOINTMENT WITH <span>GLASS POINT</span></h2>
+    </div>
+    <div class="container pb-5">
+      <form>
+        <div class="row">
+          <div class="col-md-4">
+            <input type="text" name="Name" placeholder="Your Name">
+          </div>
+          <div class="col-md-4">
+            <input type="email" name="Email " placeholder="Your Email">
+          </div>
+          <div class="col-md-4">
+            <input type="text" name="Address " placeholder="Your Address">
+          </div>
+        </div>
+      </form>
+    </div>
+    <img src="img/ruler.png" width="100%" class="rulerline">
+
+  </section>
+
+  <section id="works">
+    <div class="heading text-center pt-5 pb-2">
+      <h4>OUR GALLERY</h4>
+      <h2>WORKS OF <span>GLASS POINT</span></h2>
+    </div>
+    <div class="container-fluid desktop-view">
+      <div class="card-columns">
+        <div class="card">
+          <img class="card-img-top" src="img/g1.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">VENETIAN MIRRORS</h5>
+
+          </div>
+
+        </div>
+        <div class="card ">
+          <img class="card-img-top" src="img/g2.jpg" alt="Card image cap">
+          <div class="card-body" style="top: 88%;">
+            <h5 class="card-title">MODERN WALL MIRRORS</h5>
+
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="img/g3.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">CEILING GLASS</h5>
+
+          </div>
+        </div>
+        <div class="card ">
+          <img class="card-img-top" src="img/g4.jpg" alt="Card image cap">
+          <div class="card-body" style="top: 88%;">
+            <h5 class="card-title">RAILING GLASS</h5>
+
+          </div>
+        </div>
+        <div class="card text-center">
+          <img class="card-img-top" src="img/g5.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">COLOURED WORK ON GLASS</h5>
+
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="img/g6.jpg" alt="Card image">
+          <div class="card-body">
+            <h5 class="card-title">MANDIR GLASS</h5>
+
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="img/g7.jpg" alt="Card image cap">
+          <div class="card-body" style="top: 88%;">
+            <h5 class="card-title">SHOWER CUBICLE</h5>
+
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="img/g8.jpg" alt="Card image cap">
+          <div class="card-body" style="top: 88%;">
+            <h5 class="card-title">SAINT-GOBAIN LACQUERED GLASS</h5>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- gallery mobile view -->
+    <div class="container mobile-view">
+      <div id="slider-carousel2" class="owl-carousel">
+        <div class="item">
+          <div class="card">
+            <img class="card-img-top" src="img/g1.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">VENETIAN MIRRORS</h5>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="item">
+          <div class="card ">
+            <img class="card-img-top" src="img/g2.jpg" alt="Card image cap">
+            <div class="card-body" style="top: 88%;">
+              <h5 class="card-title">MODERN WALL MIRRORS</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <img class="card-img-top" src="img/g3.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">CEILING GLASS</h5>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="item">
+          <div class="card ">
+            <img class="card-img-top" src="img/g4.jpg" alt="Card image cap">
+            <div class="card-body" style="top: 88%;">
+              <h5 class="card-title">RAILING GLASS</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card text-center">
+            <img class="card-img-top" src="img/g5.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">COLOURED WORK ON GLASS</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <img class="card-img" src="img/g6.jpg" alt="Card image">
+            <div class="card-body">
+              <h5 class="card-title">MANDIR GLASS</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <img class="card-img-top" src="img/g7.jpg" alt="Card image cap">
+            <div class="card-body" style="top: 88%;">
+              <h5 class="card-title">SHOWER CUBICLE</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <img class="card-img-top" src="img/g8.jpg" alt="Card image cap">
+            <div class="card-body" style="top: 88%;">
+              <h5 class="card-title">SAINT-GOBAIN LACQUERED GLASS</h5>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial text-center">
+    <div class="container">
+
       <div class="heading text-center pt-5 pb-2">
-        <h4>OUR GALLERY</h4>
-        <h2>WORKS OF <span>GLASS POINT</span></h2>
-      </div>
-      <div class="container-fluid">
-        <div class="card-columns">
-  <div class="card">
-    <img class="card-img-top" src="img/g1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">VENETIAN MIRRORS</h5>
-     
-    </div>
-    
-  </div>
-  <div class="card ">
-    <img class="card-img-top" src="img/g2.jpg" alt="Card image cap">
-    <div class="card-body" style="top: 88%;">
-      <h5 class="card-title">MODERN WALL MIRRORS</h5>
-     
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="img/g3.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">CEILING GLASS</h5>
-     
-    </div>
-  </div>
-  <div class="card ">
-    <img class="card-img-top" src="img/g4.jpg" alt="Card image cap">
-    <div class="card-body" style="top: 88%;">
-      <h5 class="card-title">RAILING GLASS</h5>
-     
-    </div>
-  </div>
-  <div class="card text-center">
-    <img class="card-img-top" src="img/g5.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">COLOURED WORK ON GLASS</h5>
-     
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img" src="img/g6.jpg" alt="Card image">
-    <div class="card-body">
-      <h5 class="card-title">MANDIR GLASS</h5>
-     
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="img/g7.jpg"  alt="Card image cap">
-    <div class="card-body" style="top: 88%;">
-      <h5 class="card-title">SHOWER CUBICLE</h5>
-     
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="img/g8.jpg" alt="Card image cap">
-    <div class="card-body" style="top: 88%;">
-      <h5 class="card-title">SAINT-GOBAIN LACQUERED GLASS</h5>
-     
-    </div>
-  </div>
-</div>
-      </div>
-    </section>
-
-    <section class="testimonial text-center">
-        <div class="container">
-
-            <div class="heading text-center pt-5 pb-2">
         <h4>TESTIMONIALS</h4>
         <h2>CLIENTS SAY ABOUT <span>GLASS POINT</span></h2>
       </div>
-            <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
-             
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                        <div class="testimonial4_slide">
-                            
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                            <h4>Client 1</h4>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="testimonial4_slide">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                            <h4>Client 2</h4>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="testimonial4_slide">
-                            
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                            <h4>Client 3</h4>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#testimonial4" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-            </div>
-        </div>
-        <hr>
-    </section>
+      <div id="testimonial4"
+        class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x"
+        data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
 
-    <footer id="footer">
-      <div class="container-fluid pt-5 pb-3"> 
-        <div class="row">
-          <div class="col-md-4 logo-bottom text-center" style="border-right: 1px solid #fff;">
-           <a href="#"><img src="img/logoglassw.png" width="300px"></a>
-              <p>Glass point is one of the distinguished manufacturer and suppliers of wide range of Bedroom, Bathroom, Ceiling Style, Fountains, Awings, Glass Film Energy efficiency means more than protecting the environment.</p>
-              <p><a href="" class="pr-4" style="text-decoration: none;color: inherit;">FB</a><a href="" class="pr-4" style="text-decoration: none;color: inherit;">IN</a><a href="" style="text-decoration: none;color: inherit;">WP</a></p>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div class="testimonial4_slide">
+
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. </p>
+              <h4>Client 1</h4>
+            </div>
           </div>
-          <div class="col-md-3 text-bottom">
-            <h4>CONTACT</h4>
-            <p><i class="fa fa-map-marker pr-2"></i><a href="" style="text-decoration: none;color: inherit;">42, Moti Sil St, New Market Area
-            &nbsp;&nbsp;&nbsp;&nbsp;Dharmatala, Kolkata <br>&nbsp;&nbsp;&nbsp;
-            West Bengal 700013</a></p>
-            <p><i class="fa fa-envelope pr-2"></i><a href="mailto:info.glasspoint@gmail.com" style="text-decoration: none;color: inherit;" >info.glasspoint@gmail.com</a></p>
-            <p><i class="fa fa-phone pr-2"></i><a href="tel:+91 (33) 22281368" style="text-decoration: none;color: inherit;" >+91 (33) 22281368</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+919748211368" style="text-decoration: none;color: inherit;" >+91 97482 11368</a></p>
+          <div class="carousel-item">
+            <div class="testimonial4_slide">
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. </p>
+              <h4>Client 2</h4>
+            </div>
           </div>
-          <div class="col-md-2 text-bottom">
-            <h4 style="padding-left: 0px;">LINKS</h4>
-           
-              <ul>
-                <li><a href="index.html" style="text-decoration: none;color: inherit;">Home</a></li>
-                <li><a href="about.html" style="text-decoration: none;color: inherit;">About</a></li>
-                <li><a href="service.html" style="text-decoration: none;color: inherit;">Services</a></li>
-                <li><a href="gallery.html" style="text-decoration: none;color: inherit;">Gallery</a></li>
-                <li><a href="contact.html" style="text-decoration: none;color: inherit;">Contact</a></li>
-              </ul>
-            
-          </div>
-          <div class="col-md-3 text-bottom">
-            <h4 style="padding-left: 0px;">SUBSCRIBE</h4>
-            <input type="email" name="Mail Id" placeholder="Enter Your Email">&nbsp;&nbsp;
-            <button type="button" class="btn btn-light">Submit</button>
+          <div class="carousel-item">
+            <div class="testimonial4_slide">
+
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. </p>
+              <h4>Client 3</h4>
+            </div>
           </div>
         </div>
-        <hr>
-        <div class="footer-bottom text-center">
-          <p>Copyright 2023 GLASS POINT Designed By <a href="" style="text-decoration: none;color: #ee1c1e;">G.S.Software Pvt. Ltd.</a></p>
+        <a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#testimonial4" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
+    <hr>
+  </section>
+
+  <footer id="footer">
+    <div class="container-fluid pt-5 pb-3">
+      <div class="row">
+        <div class="col-md-4 logo-bottom text-center" style="border-right: 1px solid #fff;">
+          <a href="#"><img src="img/logoglassw.png" width="300px"></a>
+          <p>Glass point is one of the distinguished manufacturer and suppliers of wide range of Bedroom, Bathroom,
+            Ceiling Style, Fountains, Awings, Glass Film Energy efficiency means more than protecting the environment.
+          </p>
+          <p><a href="" class="pr-4" style="text-decoration: none;color: inherit;">FB</a><a href="" class="pr-4"
+              style="text-decoration: none;color: inherit;">IN</a><a href=""
+              style="text-decoration: none;color: inherit;">WP</a></p>
+        </div>
+        <div class="col-md-3 text-bottom">
+          <h4>CONTACT</h4>
+          <p><i class="fa fa-map-marker pr-2"></i><a href="" style="text-decoration: none;color: inherit;">42, Moti Sil
+              St, New Market Area
+              &nbsp;&nbsp;&nbsp;&nbsp;Dharmatala, Kolkata <br>&nbsp;&nbsp;&nbsp;
+              West Bengal 700013</a></p>
+          <p><i class="fa fa-envelope pr-2"></i><a href="mailto:info.glasspoint@gmail.com"
+              style="text-decoration: none;color: inherit;">info.glasspoint@gmail.com</a></p>
+          <p><i class="fa fa-phone pr-2"></i><a href="tel:+91 (33) 22281368"
+              style="text-decoration: none;color: inherit;">+91 (33)
+              22281368</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+919748211368"
+              style="text-decoration: none;color: inherit;">+91 97482 11368</a></p>
+        </div>
+        <div class="col-md-2 text-bottom">
+          <h4 style="padding-left: 0px;">LINKS</h4>
+
+          <ul>
+            <li><a href="index.html" style="text-decoration: none;color: inherit;">Home</a></li>
+            <li><a href="about.html" style="text-decoration: none;color: inherit;">About</a></li>
+            <li><a href="service.html" style="text-decoration: none;color: inherit;">Services</a></li>
+            <li><a href="gallery.html" style="text-decoration: none;color: inherit;">Gallery</a></li>
+            <li><a href="contact.html" style="text-decoration: none;color: inherit;">Contact</a></li>
+          </ul>
+
+        </div>
+        <div class="col-md-3 text-bottom">
+          <h4 style="padding-left: 0px;">SUBSCRIBE</h4>
+          <input type="email" name="Mail Id" placeholder="Enter Your Email">&nbsp;&nbsp;
+          <button type="button" class="btn btn-light">Submit</button>
         </div>
       </div>
-      <!-- scrolltop to bottom -->
-       <div id="scrollToTopBtn">
-           <button><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-       </div>
+      <hr>
+      <div class="footer-bottom text-center">
+        <p>Copyright 2023 GLASS POINT Designed By <a href="" style="text-decoration: none;color: #ee1c1e;">G.S.Software
+            Pvt. Ltd.</a></p>
+      </div>
+    </div>
+    <!-- scrolltop to bottom -->
+    <div id="scrollToTopBtn">
+      <button><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+    </div>
 
 
-    </footer>
+  </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-     <!-- jQuery first -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script type="js/script.js"></script>
-      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-     <script src='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js'></script>
-     <!-- slider -->
-     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js'></script>
-     <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
-     <!-- slider -->
-    
-     <script type="text/javascript">
-       $(document).ready(function() {
-     var owl = $("#slider-carousel");
-     owl.owlCarousel({
-       items: 5,
-       itemsDesktop: [1000, 5],
-       itemsDesktopSmall: [900, 2],
-       itemsTablet: [600, 1],
-       itemsMobile: true,
-       pagination: false
-     });
-     $(".next").click(function() {
-       owl.trigger('owl.next');
-     })
-     $(".prev").click(function() {
-       owl.trigger('owl.prev');
-     })
-   });
-     </script>
-     <script>
-        $('.slider').clone().removeAttr('id').attr('id', 'slider-2').appendTo('body');
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+  <!-- jQuery first -->
+   <!-- jQuery (required) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap 4 JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="js/script.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js'></script>
+  <!-- slider -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
+  <!-- slider -->
 
-$('#slider-1').slick({
-    arrows: false,
-    autoplay:true,
-    speed: 2000,
-    asNavFor: '#slider-2',
-    dots: false
-}).on('mousedown touchstart', function () {
-    $('body').addClass('down');
-}).on('mouseleave mouseup touchend', function () {
-    $('body').removeClass('down');
-});
+  <script>
+    $(document).ready(function () {
+      var owl = $("#slider-carousel");
+      owl.owlCarousel({
+        loop: true,
+        margin: 10,
+        dots: false,
+        nav: false,
+        items: 5,
+        autoplay: true,
+        autoplayTimeout: 3000, // 3 seconds
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 2
+          },
+          1000: {
+            items: 5
+          }
+        }
+      });
 
-$(window).on('keydown', function () {
-    $('body').addClass('down');
-}).on('keyup', function () {
-    $('body').removeClass('down');
-});
+      $(".next").click(function () {
+        owl.trigger("next.owl.carousel");
+      });
 
-$('#slider-2').slick({
-    fade: true,
-    arrows: false,
-    autoplay:true,
-    speed: 3000,
-    asNavFor:
-    '#slider-1',
-    dots: false
-});
+      $(".prev").click(function () {
+        owl.trigger("prev.owl.carousel");
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      var owl = $("#slider-carousel2");
+      owl.owlCarousel({
+        loop: true,
+        margin: 10,
+        dots: false,
+        nav: false,
+        items: 5,
+        autoplay: true,
+        autoplayTimeout: 3000, // 3 seconds
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 2
+          },
+          1000: {
+            items: 5
+          }
+        }
+      });
 
-setTimeout(function(){
-  $(window).trigger('keydown');
-  setTimeout(function(){
-    $('#slider-1').slick('slickNext');
-    setTimeout(function(){
-      $(window).trigger('keyup');
-    }, 500);
-  }, 600);
-}, 1500);
+      $(".next").click(function () {
+        owl.trigger("next.owl.carousel");
+      });
 
-$('#slider-1 image').removeAttr('mask');
+      $(".prev").click(function () {
+        owl.trigger("prev.owl.carousel");
+      });
+    });
+  </script>
+  <script>
+    $('.slider').clone().removeAttr('id').attr('id', 'slider-2').appendTo('body');
 
-$(window).on('resize', function () {
-    $('#donutmask circle').attr({
+    $('#slider-1').slick({
+      arrows: false,
+      autoplay: true,
+      speed: 2000,
+      asNavFor: '#slider-2',
+      dots: false
+    }).on('mousedown touchstart', function () {
+      $('body').addClass('down');
+    }).on('mouseleave mouseup touchend', function () {
+      $('body').removeClass('down');
+    });
+
+    $(window).on('keydown', function () {
+      $('body').addClass('down');
+    }).on('keyup', function () {
+      $('body').removeClass('down');
+    });
+
+    $('#slider-2').slick({
+      fade: true,
+      arrows: false,
+      autoplay: true,
+      speed: 3000,
+      asNavFor:
+        '#slider-1',
+      dots: false
+    });
+
+    setTimeout(function () {
+      $(window).trigger('keydown');
+      setTimeout(function () {
+        $('#slider-1').slick('slickNext');
+        setTimeout(function () {
+          $(window).trigger('keyup');
+        }, 500);
+      }, 600);
+    }, 1500);
+
+    $('#slider-1 image').removeAttr('mask');
+
+    $(window).on('resize', function () {
+      $('#donutmask circle').attr({
         cx: $(window).width() / 2,
         cy: $(window).height() / 2
-    });
-    $('#donutmask #outer').attr({
+      });
+      $('#donutmask #outer').attr({
         r: $(window).height() / 2.6
-    });
-    $('#donutmask #inner').attr({
+      });
+      $('#donutmask #inner').attr({
         r: $(window).height() / 4.5
+      });
+    }).resize();
+
+    $(window).on('mousemove', function (e) {
+      $('.cursor').css({
+        top: e.pageY + 'px',
+        left: e.pageX + 'px',
+      })
     });
-}).resize();
-
-$(window).on('mousemove', function(e){
-  $('.cursor').css({
-    top: e.pageY + 'px',
-    left: e.pageX + 'px',
-  })
-});
-     </script>  
-     <script>
-        $(window).scroll(function () {
-  console.log($(window).scrollTop())
-  if ($(window).scrollTop() > 63) {
-  $('header').addClass('header-sticky');
-  }
-  if ($(window).scrollTop() < 64) {
-  $('header').removeClass('header-sticky');
-  }
+  </script>
+<script>
+    $(document).ready(function () {
+    // Close navbar on nav link click (only in mobile)
+    $('.navbar-nav .nav-link').on('click', function () {
+      $('.navbar-collapse').collapse('hide');
+    });
+      $(window).scroll(function () {
+      if ($(window).scrollTop() > 63) {
+        $('header').addClass('header-sticky');
+      } else {
+        $('header').removeClass('header-sticky');
+      }
+    });
   });
-  // $(document).ready(function(){
-  //   $(window).scroll(function () {
-  //   if ($(this).scrollTop() > 50) {
-  //   $('#back-to-top').fadeIn();
-  //   } else {
-  //   $('#back-to-top').fadeOut();
-  //   }
-  //   });
-  //   // scroll body to 0px on click
-  //   $('#back-to-top').click(function () {
-  //   $('body,html').animate({
-  //   scrollTop: 0
-  //   }, 400);
-  //   return false;
-  //   });
-  //   });
-     </script>
-     <script>
-  // Show/hide button on scroll
-  window.onscroll = function() {
-    const btn = document.getElementById("scrollToTopBtn");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
 
-  // Scroll to top on click
-  document.querySelector("#scrollToTopBtn button").addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    // Sticky header effect
 </script>
 
-  </body>
+  <script>
+    // Show/hide button on scroll
+    window.onscroll = function () {
+      const btn = document.getElementById("scrollToTopBtn");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    // Scroll to top on click
+    document.querySelector("#scrollToTopBtn button").addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+
 </html>
