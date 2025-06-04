@@ -1119,22 +1119,31 @@
     });
   </script>
 <script>
-    $(document).ready(function () {
-    // Close navbar on nav link click (only in mobile)
+  $(document).ready(function () {
+    // On nav link click
     $('.navbar-nav .nav-link').on('click', function () {
-      $('.navbar-collapse').collapse('hide');
+      // Check if the toggler is visible (mobile view)
+      if ($('.navbar-toggler').is(':visible')) {
+        // Add a small delay before collapsing to allow scroll to happen smoothly
+        setTimeout(function () {
+  $('.navbar-toggler').click();
+}, 100);
+ // 100ms delay
+      }
     });
-      $(window).scroll(function () {
-      if ($(window).scrollTop() > 63) {
+
+    // Sticky header toggle
+    $(window).on('scroll', function () {
+      if ($(this).scrollTop() > 63) {
         $('header').addClass('header-sticky');
       } else {
         $('header').removeClass('header-sticky');
       }
     });
   });
-
-    // Sticky header effect
 </script>
+
+
 
   <script>
     // Show/hide button on scroll
